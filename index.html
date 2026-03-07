@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Chirex Studios</title>
+
 <link rel="stylesheet" href="style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <header>
+
 <h1>Chirex Studios</h1>
+
 <nav>
 <a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Portfolio</a>
-<a href="#">Contact</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
 </nav>
+
 </header>
 
 <section class="hero">
 
-<button>View Portfolio</button>
-<button onclick="document.getElementById('contact').scrollIntoView()">Book a Shoot</button>
+<h2>Cinematic Visual Storytelling</h2>
+
+<p>Professional video production for brands, creators and weddings.</p>
+
+<div class="hero-buttons">
+
+<button onclick="document.querySelector('#portfolio').scrollIntoView({behavior:'smooth'})">
+View Portfolio
+</button>
+
+<button onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
+Book a Shoot
+</button>
+
+</div>
+
 </section>
 
-<section class="services">
+<section class="services" id="services">
+
 <h2>Our Services</h2>
+
+<div class="services-container">
 
 <div class="service">
 <h3>Brand Shoots</h3>
@@ -43,21 +69,29 @@
 <p>Beautiful cinematic wedding storytelling.</p>
 </div>
 
+</div>
+
 </section>
 
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
+
 <h2>Our Work</h2>
 
 <div class="grid">
+
 <div class="item photo1"></div>
 <div class="item photo2"></div>
+<div class="item photo3"></div>
 <div class="item photo4"></div>
+<div class="item photo5"></div>
 <div class="item photo6"></div>
+
 </div>
 
 </section>
 
 <section class="contact" id="contact">
+
 <h2>Book Your Shoot</h2>
 
 <form id="contact-form">
@@ -79,39 +113,6 @@
 <footer>
 <p>© 2026 Chirex Studios</p>
 </footer>
-
-<!-- EMAILJS SCRIPT -->
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-
-(function(){
-emailjs.init("YFP_ns1_d7QVwtmQj");
-})();
-
-document.getElementById("contact-form").addEventListener("submit", function(e){
-
-e.preventDefault();
-
-emailjs.sendForm(
-"Service_Chirex",
-"template_5a1ckjp",
-this
-).then(function(){
-
-alert("Message Sent Successfully!");
-document.getElementById("contact-form").reset();
-
-}, function(error){
-
-alert("Failed to send message");
-
-});
-
-});
-
-</script>
 
 </body>
 </html>
