@@ -5,6 +5,7 @@
 <title>Chirex Studios</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
@@ -20,7 +21,7 @@
 <section class="hero">
 <h2>Cinematic Visuals for Brands, Creators & Weddings</h2>
 <button>View Portfolio</button>
-<button>Book a Shoot</button>
+<button onclick="document.getElementById('contact').scrollIntoView()">Book a Shoot</button>
 </section>
 
 <section class="services">
@@ -45,25 +46,71 @@
 
 <section class="portfolio">
 <h2>Our Work</h2>
+
 <div class="grid">
 <div class="item"></div>
 <div class="item"></div>
 <div class="item"></div>
 <div class="item"></div>
 </div>
+
 </section>
 
-<section class="contact">
+<section class="contact" id="contact">
 <h2>Book Your Shoot</h2>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Email">
-<textarea placeholder="Your Message"></textarea>
-<button>Send</button>
+
+<form id="contact-form">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="text" name="phone" placeholder="Phone Number">
+
+<textarea name="message" placeholder="Tell us about your project"></textarea>
+
+<button type="submit">Send Inquiry</button>
+
+</form>
+
 </section>
 
 <footer>
 <p>© 2026 Chirex Studios</p>
 </footer>
+
+<!-- EMAILJS SCRIPT -->
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+
+(function(){
+emailjs.init("YFP_ns1_d7QVwtmQj");
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+emailjs.sendForm(
+"Service_Chirex",
+"template_5a1ckjp",
+this
+).then(function(){
+
+alert("Message Sent Successfully!");
+document.getElementById("contact-form").reset();
+
+}, function(error){
+
+alert("Failed to send message");
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
