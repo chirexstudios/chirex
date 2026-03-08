@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!doctype html>
 
+<html lang="en">
+
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,22 +11,19 @@
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 </head>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <body>
 
 <header>
-
 <h1>Chirex Studios</h1>
 
 <nav>
-<a href="#">Home</a>
+<a href="index.html">Home</a>
 <a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
+<a href="work.html">Work</a>
 <a href="#contact">Contact</a>
 </nav>
-
 </header>
 
 <section class="hero">
@@ -36,7 +34,7 @@
 
 <div class="hero-buttons">
 
-<button onclick="document.querySelector('#portfolio').scrollIntoView({behavior:'smooth'})">
+<button onclick="window.location.href='work.html'">
 View Portfolio
 </button>
 
@@ -73,46 +71,25 @@ Book a Shoot
 
 </section>
 
-<section class="portfolio" id="portfolio">
+<!-- BOOK SHHOOT -->
 
-<h2>Our Work</h2>
-
-<div class="grid">
-
-<div class="item photo1"></div>
-<div class="item photo2"></div>
-<div class="item photo3"></div>
-<div class="item photo4"></div>
-<div class="item photo5"></div>
-<div class="item photo6"></div>
+<div id="bookshoot-section">
 
 </div>
 
-</section>
+<!-- CONTACT SECTION LOADED FROM contact.html -->
 
-<section class="contact" id="contact">
-
-<h2>Book Your Shoot</h2>
-
-<form id="contact-form">
-
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="email" name="email" placeholder="Email" required>
-
-<input type="text" name="phone" placeholder="Phone Number">
-
-<textarea name="message" placeholder="Tell us about your project"></textarea>
-
-<button type="submit">Send Inquiry</button>
-
-</form>
-
+<section class="contact-container">
+<div id="contact-section"></div>
 </section>
 
 <footer>
 <p>© 2026 Chirex Studios</p>
 </footer>
+ 
+<script src="bookshoot.js"></script>
+
+<script src="loadContact.js"></script>
 
 </body>
 </html>
