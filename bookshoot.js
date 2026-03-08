@@ -1,4 +1,4 @@
-fetch("Book_shoot.html")
+fetch("book_shoot.html")
 .then(response => response.text())
 .then(data => {
 document.getElementById("bookshoot-section").innerHTML = data;
