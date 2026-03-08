@@ -25,6 +25,9 @@ z-index:100;
 
 header h1{
 color:#ff3c3c;
+font-style:italic;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-weight: 550;
 }
 
 nav a{
