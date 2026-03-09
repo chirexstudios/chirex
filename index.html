@@ -1,110 +1,116 @@
 <!doctype html>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chirex Studios</title>
 
-    <title>Chirex Studios</title>
+  <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <h1>Chirex Studios</h1>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="#services">Services</a>
-        <a href="work.html">Work</a>
-        <a href="#contact">Contact</a>
-        <a href="aboutUs.html">About Us</a>
-      </nav>
-    </header>
+<body>
 
-    <section class="hero">
-      <h2>Cinematic Visual Storytelling</h2>
+<!-- HEADER -->
 
-      <p>Professional video production for brands, creators and weddings.</p>
+<header>
+  <h1>Chirex Studios</h1>
 
-      <div class="hero-buttons">
-        <button onclick="window.location.href = 'work.html'">
-          View Portfolio
-        </button>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#services">Services</a>
+    <a href="work.html">Work</a>
+    <a href="#contact-container">Contact</a>
+    <a href="aboutUs.html">About Us</a>
+  </nav>
+</header>
 
-        <button
-          onclick="
-            document
-              .querySelector('#contact')
-              .scrollIntoView({ behavior: 'smooth' })
-          "
-        >
-          Book a Shoot
-        </button>
-      </div>
-    </section>
+<!-- HERO -->
 
-    <section class="services" id="services">
-      <h2>Our Services</h2>
+<section class="hero">
+  <h2>Cinematic Visual Storytelling</h2>
 
-      <div class="services-container">
-        <div class="service">
-          <h3>Brand Shoots</h3>
-          <p>High quality product and advertisement videos.</p>
-        </div>
+  <p>Professional video production for brands, creators and weddings.</p>
 
-        <div class="service">
-          <h3>Creator Content</h3>
-          <p>YouTube, reels and cinematic creator content.</p>
-        </div>
+  <div class="hero-buttons">
 
-        <div class="service">
-          <h3>Wedding Films</h3>
-          <p>Beautiful cinematic wedding storytelling.</p>
-        </div>
+```
+<button onclick="window.location.href='work.html'">
+  View Portfolio
+</button>
 
-        <div class="service">
-          <h3>Pre-Wedding Shoots</h3>
-          <p>Romantic cinematic couple films.</p>
-        </div>
+<button onclick="document.querySelector('#contact-container').scrollIntoView({behavior:'smooth'})">
+  Book a Shoot
+</button>
+```
 
-        <div class="service">
-          <h3>Event Coverage</h3>
-          <p>College events , parties & corporate events.</p>
-        </div>
-        <div class="service">
-          <h3>Reel Creation</h3>
-          <p>Creating Professional reels for influencers.</p>
-        </div>
-      </div>
-    </section>
-
-   <!-- BOOK SHOOT -->
-
-<div id="bookshoot-section"></div>
-
-<!-- CONTACT -->
-
-<section class="contact">
-  <div id="contact-section"></div>
+  </div>
 </section>
 
-    <footer>
-      <p>© 2026 Chirex Studios</p>
-    </footer>
+<!-- SERVICES -->
 
-    <script src="bookshoot.js"></script>
+<section class="services" id="services">
 
-    <script src="loadContact.js"></script>
-    <script src="work.js"></script>
-  </body>
+  <h2>Our Services</h2>
+
+  <div class="services-container">
+
+```
+<div class="service">
+  <h3>Brand Shoots</h3>
+  <p>High quality product and advertisement videos.</p>
+</div>
+
+<div class="service">
+  <h3>Creator Content</h3>
+  <p>YouTube, reels and cinematic creator content.</p>
+</div>
+
+<div class="service">
+  <h3>Wedding Films</h3>
+  <p>Beautiful cinematic wedding storytelling.</p>
+</div>
+
+<div class="service">
+  <h3>Pre-Wedding Shoots</h3>
+  <p>Romantic cinematic couple films.</p>
+</div>
+
+<div class="service">
+  <h3>Event Coverage</h3>
+  <p>College events, parties & corporate events.</p>
+</div>
+
+<div class="service">
+  <h3>Reel Creation</h3>
+  <p>Creating professional reels for influencers.</p>
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- CONTACT SECTION (Loaded from contact.html) -->
+
+<section class="contact">
+  <div id="contact-container"></div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© 2026 Chirex Studios</p>
+</footer>
+
+<!-- SCRIPTS -->
+
+<script src="loadContact.js"></script>
+
+</body>
 </html>
