@@ -145,34 +145,118 @@ nav a:hover {
   transform: translateY(-10px);
 }
 
-/* PORTFOLIO */
-
-.portfolio {
-  padding: 80px 10%;
-  text-align: center;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.item {
-  height: 300px;
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  transition: 0.5s;
-}
-
-.item:hover {
-  transform: scale(1.05);
-}
-
 /* WORK PAGE */
 
-.portfolio-page {
+/* MEDIA */
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.banner .slider {
+  position: absolute;
+  width: 220px;
+  height: 280px;
+  top: 10%;
+  left: calc(50% - 110px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRotate 20s linear infinite;
+}
+.banner .slider:hover {
+  animation-play-state: paused;
+}
+.banner .slider .item {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(
+    calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(550px);
+  }
+  .banner .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    transition: 0.5s;
+    -webkit-box-reflect: below 10px
+    linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+  }
+  .banner .slider .item img:hover {
+    transform: scale(1.1);
+  } /* rotation animation */
+  @keyframes autoRotate {
+    from {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    to {
+      transform: perspective(1000px) rotateY(360deg);
+    }
+  }
+  .image-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+    z-index: 1000;
+  }
+  .image-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+  .image-viewer.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+  }
+  .portfolio {
+    padding: 80px 10%;
+    text-align: center;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .item {
+    height: 300px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s;
+  }
+  
+  .item:hover {
+    transform: scale(1.05);
+  }
+
+  
+  /* PORTFOLIO */
+  
+  .portfolio-page {
   padding: 80px 10%;
   text-align: center;
 }
@@ -181,26 +265,6 @@ nav a:hover {
   margin-bottom: 40px;
 }
 
-/* MEDIA */
-
-.grid img,
-.grid video {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: 0.4s;
-}
-
-.grid img:hover,
-.grid video:hover {
-  transform: scale(1.05);
-}
-
-video {
-  background: black;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
 
 /* CONTACT */
 
@@ -449,24 +513,24 @@ footer {
 /* FULLSCREEN IMAGE VIEWER */
 /* ========================= */
 
-.clicks img{
+.clicks img {
   cursor: pointer;
   transition: 0.3s;
 }
 
-.clicks img:hover{
+.clicks img:hover {
   transform: scale(1.05);
 }
 
 /* viewer background */
 
-#imageViewer{
+#imageViewer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.95);
+  background: rgba(0, 0, 0, 0.95);
   display: none;
   justify-content: center;
   align-items: center;
@@ -476,16 +540,16 @@ footer {
 
 /* fullscreen image */
 
-#imageViewer img{
+#imageViewer img {
   max-width: 95%;
   max-height: 95%;
   border-radius: 10px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.8);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
 }
 
 /* close button */
 
-#closeBtn{
+#closeBtn {
   position: absolute;
   top: 25px;
   right: 40px;
@@ -496,14 +560,14 @@ footer {
   transition: 0.3s;
 }
 
-#closeBtn:hover{
+#closeBtn:hover {
   color: #ff3c3c;
 }
-.clicks{
-text-align:center;
+.clicks {
+  text-align: center;
 }
 
-.clicks p{
-margin-top:10px;
-color:#ccc;
+.clicks p {
+  margin-top: 10px;
+  color: #ccc;
 }

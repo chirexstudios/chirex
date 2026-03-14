@@ -1,73 +1,93 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Chirex Studios</title>
 
-<title>Our Work - Chirex Studios</title>
+    <link rel="stylesheet" href="style.css" />
 
-<link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <header>
+      <h1>Chirex Studios</h1>
 
-<body>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="work.html">Work</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="aboutUs.html">About Us</a>
+      </nav>
+    </header>
 
-<header>
-<h1>Chirex Studios</h1>
+    <section class="portfolio-page">
+      <h2>Our Work</h2>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="index.html#services">Services</a>
-<a href="work.html">Work</a>
-<a href="index.html#contact">Contact</a>
-<a href="aboutUs.html">About Us</a>
-</nav>
-</header>
+      <div class="banner">
+        <div class="slider" style="--quantity: 6">
+          <div class="item" style="--position: 1">
+            <img src="IMG-20260307-WA0000.jpg" />
+          </div>
+          <div class="item" style="--position: 2">
+            <img src="IMG-20260307-WA0001.jpg" />
+          </div>
+          <div class="item" style="--position: 3">
+            <img src="IMG-20260307-WA0004.jpg" />
+          </div>
+          <div class="item" style="--position: 4">
+            <img src="IMG-20260307-WA0008.jpg" />
+          </div>
+          <div class="item" style="--position: 5">
+            <img src="IMG-20260307-WA0011.jpg" />
+          </div>
+          <div class="item" style="--position: 6">
+            <img src="IMG-20260307-WA0009.jpg" />
+          </div>
+        </div>
+      </div>
+      <div class="image-viewer" id="viewer">
+        <span class="close">&times;</span> <img id="viewer-img" />
+      </div>
+    </section>
 
-<section class="portfolio-page">
+    <footer>
+      <p>© 2026 Chirex Studios</p>
+    </footer>
 
-<h2>Our Work</h2>
+    <!-- FULLSCREEN IMAGE VIEWER -->
+    <div id="imageViewer">
+      <span id="closeBtn">&times;</span>
+      <img id="fullImage" />
+    </div>
 
-<div class="grid">
-
-<div class="clicks">
-<img src="IMG-20260307-WA0000.jpg" alt="Day Light Shoot">
-<p>Day-Light Shot</p>
-</div>
-
-<div class="clicks">
-<img src="IMG-20260307-WA0001.jpg" alt="Wildlife Shot">
-<p>Capturing Wildlife</p>
-</div>
-
-<div class="clicks">
-<img src="IMG-20260307-WA0011.jpg" alt="Concert Shoot">
-<p>Concert Shoot</p>
-</div>
-
-<div class="clicks">
-<img src="IMG-20260307-WA0008.jpg" alt="Live Concert">
-<p>Live Concert</p>
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-<p>© 2026 Chirex Studios</p>
-</footer>
-
-<!-- FULLSCREEN IMAGE VIEWER -->
-<div id="imageViewer">
-  <span id="closeBtn">&times;</span>
-  <img id="fullImage">
-</div>
-
-<script src="work.js" defer></script>
-<script src="loadcontact.js" defer></script>
-</body>
+    <script src="work.js" defer></script>
+    <script src="loadcontact.js" defer></script>
+    <script>
+      const images = document.querySelectorAll(".slider img");
+      const viewer = document.getElementById("viewer");
+      const viewerImg = document.getElementById("viewer-img");
+      const closeBtn = document.querySelector(".close");
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          viewer.classList.add("active");
+          viewerImg.src = img.src;
+        });
+      });
+      closeBtn.onclick = () => {
+        viewer.classList.remove("active");
+      };
+      viewer.onclick = (e) => {
+        if (e.target === viewer) {
+          viewer.classList.remove("active");
+        }
+      };
+    </script>
+  </body>
 </html>
